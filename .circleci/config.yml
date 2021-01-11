@@ -1,16 +1,17 @@
 version: 2.1
 orbs:
-  architect: giantswarm/architect@1.0.0
+  architect: giantswarm/architect@1.1.1
 
 workflows:
   package-and-push-chart-on-tag:
     jobs:
       - architect/push-to-app-catalog:
           context: "architect"
-          name: "package and push {CHART-NAME} chart"
+          executor: "app-build-suite"
+          name: "package and push kube-eagle chart"
           app_catalog: "giantswarm-playground-catalog"
           app_catalog_test: "giantswarm-playground-test-catalog"
-          chart: "{CHART-NAME}"
+          chart: "kube-eagle"
           # Trigger job on git tag.
           filters:
             tags:
