@@ -1,0 +1,11 @@
+apiVersion: v2
+appVersion: 1.1.4
+description: Prometheus exporter for Kubernetes pod & node resource requests, limits and usage.
+engine: gotpl
+home: https://github.com/giantswarm/kube-eagle-app
+icon: https://some.domain.com/logo.png
+name: kube-eagle
+sources:
+- https://github.com/cloudworkz/kube-eagle-helm-chart/
+- https://raw.githubusercontent.com/giantswarm/kube-eagle-app/v[[ .Version ]]/README.md
+version: [[ .Version ]]
