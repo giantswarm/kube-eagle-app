@@ -15,12 +15,6 @@ spec:
         {{- with .Values.podAnnotations }}
           {{- toYaml . | nindent 8 }}
         {{- end }}
-        prometheus.io/scrape: "true"
-        prometheus.io/port: {{ .Values.service.port | quote }}
-        prometheus.io/path: "/metrics"
-        giantswarm.io/monitoring: "true"
-        giantswarm.io/monitoring-path: "/metrics"
-        giantswarm.io/monitoring-port: {{ .Values.service.port | quote }}
       labels:
         {{- include "labels.common" . | nindent 8 }}
     spec:

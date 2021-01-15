@@ -4,6 +4,13 @@ metadata:
   name: {{ template "kube-eagle.fullname" . }}
   labels:
     {{- include "labels.common" . | nindent 4 }}
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: {{ .Values.service.port | quote }}
+    prometheus.io/path: "/metrics"
+    giantswarm.io/monitoring: "true"
+    giantswarm.io/monitoring-path: "/metrics"
+    giantswarm.io/monitoring-port: {{ .Values.service.port | quote }}
 spec:
   type: {{ .Values.service.type }}
   ports:
