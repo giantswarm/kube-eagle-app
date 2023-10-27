@@ -8,3 +8,5 @@ sources:
 - https://github.com/cloudworkz/kube-eagle-helm-chart/
 - https://raw.githubusercontent.com/giantswarm/kube-eagle-app/v[[ .Version ]]/README.md
 version: [[ .Version ]]
+annotations:
+  application.giantswarm.io/team: atlas
